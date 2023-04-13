@@ -2,11 +2,21 @@
 import './App.css';
 import React from 'react';
 import Card from './components/Card';
+import { ITEMS } from './tests/mocks';
+// import { getItems } from './tests/mocks';
 
 const WEB = 'Todos,Mercado Livre,Buscapé'.split(',');
 const CATEGORIES = 'Geladeira, TV, Celular'.split(',');
 
 function App() {
+  // getItems().then((i)=>console.log(i))
+  // const item = {
+  //   photo: "https://http2.mlstatic.com/fusca-4-mil-km-100-orig-1972-azul-sem-igual-p-placa-preta-D_NQ_NP_264711-MLB20612943516_032016-F.jpg",
+  //   description: "Fusca 4 Mil Km 100% Orig 1972 Azul",
+  //   category: "Carros",
+  //   price: "10.000",
+  //   website: "https://carro.mercadolivre.com.br/MLB-944438788-fusca-4-mil-km-100-orig-1972-azul-sem-igual-p-placa-preta-_JM",
+  // }
   return (
     <main>
       <section className="search-bar">
@@ -31,8 +41,8 @@ function App() {
         </div>
       </section>
 
-      <section>
-        <Card></Card>
+      <section className='cards'>
+        {ITEMS.map((i)=>(<Card key={i.website} item={i}/>))}
       </section>
     </main>
   );
