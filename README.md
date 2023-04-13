@@ -2,7 +2,7 @@
 
 ## Software Engineering
 
-1. Create a product search engine that connects to the free market and Buscapé (web scrap) page.
+1. Create a product search engine that connects to the Mercado Livre and Buscapé (web scrap) page.
    1. Through a drop-down menu we can choose the categories: Mobile, Refrigerator, TV.
    2. Through a drop-down menu we can choose the site: Mercado Livre / Buscapé
    3. Create a free text entry to search for products
