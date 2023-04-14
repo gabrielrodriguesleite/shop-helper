@@ -32,7 +32,9 @@ func main() {
 func Get(w http.ResponseWriter, r *http.Request) {
 	var q Query
 	json.NewDecoder(r.Body).Decode(&q)
-	fmt.Printf("%+v", q)
+
+	// fmt.Printf("%+v", q)
+	beautyPrint(q)
 
 	json.NewEncoder(w).Encode(
 		map[string][]crawler.Item{
@@ -45,4 +47,13 @@ type Query struct {
 	Category string `json:"category"`
 	Search   string `json:"search"`
 	Website  string `jsoon:"website"`
+}
+
+func beautyPrint(a any) {
+	i, err := json.MarshalIndent(a, "", "  ")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(string(i))
+
 }
