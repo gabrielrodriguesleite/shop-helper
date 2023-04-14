@@ -3,7 +3,8 @@ import './App.css';
 import React, { useState } from 'react';
 import Card from './components/Card';
 
-import { getItems } from './tests/mocks';
+import { getItems } from './services';
+// import { getItems } from './tests/mocks';
 
 const WEB = 'Todos,Mercado Livre,Buscapé'.split(',');
 const CATEGORIES = 'Geladeira,TV,Celular'.split(',');
@@ -13,7 +14,12 @@ function App() {
   const [category, setCategory] = useState(CATEGORIES[0]);
   const [search, setSearch] = useState('');
   const [items, setItems] = useState([]);
-  const [ready, setReady] = useState(false)
+  const [ready, setReady] = useState(false);
+
+  const receivedItems = (i) => {
+    setItems(i);
+    setReady(true);
+  };
 
   return (
     <main>
@@ -29,13 +35,8 @@ function App() {
 
         <button
           type="button"
-          disabled={search==""}
-          onClick={() =>
-            getItems(web, category, search).then((i) => {
-              setItems(i)
-              setReady(true)
-            })
-          }
+          disabled={search == ''}
+          onClick={() => getItems(web, category, search, receivedItems)}
         >
           Buscar
         </button>
@@ -76,7 +77,7 @@ function App() {
       </section>
 
       <section className="cards">
-        {ready && !items.length ? (<div>Tente outra pesquisa.</div>): null}
+        {ready && !items.length ? <div>Tente outra pesquisa.</div> : null}
         {items.map((i) => (
           <Card key={i.website} item={i} />
         ))}

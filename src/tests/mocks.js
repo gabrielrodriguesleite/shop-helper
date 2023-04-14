@@ -29,4 +29,4 @@ export const ITEMS = [
   }
 ]
 
-export const getItems = (web, category, search) => { return new Promise((resolve) => { resolve(ITEMS) }) }
+export const getItems = (web, category, search, receivedItems) => { new Promise(() => { receivedItems(ITEMS) }) }
