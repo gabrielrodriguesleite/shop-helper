@@ -11,11 +11,11 @@ import (
 )
 
 type Item struct {
-	Photo       string
-	Description string
-	Category    string
-	Price       string
-	Website     string
+	Photo       string `json:"photo"`
+	Description string `json:"description"`
+	Category    string `json:"category"`
+	Price       string `json:"price"`
+	Website     string `json:"website"`
 }
 
 func GetMLItems(category, query string) []Item {

@@ -30,11 +30,19 @@ func main() {
 }
 
 func Get(w http.ResponseWriter, r *http.Request) {
-	json.
-		NewEncoder(w).
-		Encode(
-			crawler.Item{
-				Description: "uma descrição do produto",
-			},
-		)
+	var q Query
+	json.NewDecoder(r.Body).Decode(&q)
+	fmt.Printf("%+v", q)
+
+	json.NewEncoder(w).Encode(
+		map[string][]crawler.Item{
+			"items": crawler.GetMLItems("veiculos", "fusca"),
+		},
+	)
+}
+
+type Query struct {
+	Category string `json:"category"`
+	Search   string `json:"search"`
+	Website  string `jsoon:"website"`
 }
