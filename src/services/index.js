@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 export const getItems = (web, category, search, receivedItems) => {
-  const url = 'http://localhost:8000';
+  // const url = 'http://localhost:8000';
+  const url = "https://crawler-api.fly.dev/"
   const body = {
     category: category,
     search: search,

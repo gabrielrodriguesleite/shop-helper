@@ -23,6 +23,8 @@ function App() {
 
   return (
     <main>
+
+      {/* ========== SEARCH AREA ========== */}
       <section className="search-bar">
         <span>Shop Helper</span>
 
@@ -76,6 +78,7 @@ function App() {
         </div>
       </section>
 
+      {/* ========== CARDS AREA ========== */}
       <section className="cards">
         {ready && !items.length ? <div>Tente outra pesquisa.</div> : null}
         {items.map((i) => (
