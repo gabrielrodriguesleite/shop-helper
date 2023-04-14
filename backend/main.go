@@ -32,8 +32,34 @@ func getMLItems(category, query string) []Item {
 	doc.Find(".ui-search-layout__item").Each(func(i int, selection *goquery.Selection) {
 		item := Item{}
 
+		item.Category = category
+
+		// selecionando o link
+		link, has := selection.Find("a").Attr("href")
+		if has {
+			item.Website = link
+		}
+
+		// selecionando o link da imagem
+		imgURL, has := selection.Find("img").Attr("data-src")
+		if has {
+			item.Photo = imgURL
+		}
+
+		// selecionando a descrição
+		description, has := selection.Find("a").Attr("title")
+		if has {
+			item.Description = description
+		}
+
+		// selecionando o preço
+		item.Price = selection.Find(".price-tag-symbol").Text() + selection.Find(".price-tag-fraction").Text()
+
 		items = append(items, item)
+
 	})
+
+	// TODO: keep going through the pages
 	return items
 }
 
