@@ -29,7 +29,11 @@ func getMLItems(category, query string) []Item {
 		log.Fatal(err)
 	}
 
-	fmt.Println(doc.Find(".ui-search-layout__item").Html())
+	doc.Find(".ui-search-layout__item").Each(func(i int, selection *goquery.Selection) {
+		item := Item{}
+
+		items = append(items, item)
+	})
 	return items
 }
 
