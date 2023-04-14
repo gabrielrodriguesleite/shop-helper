@@ -2,13 +2,36 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math/rand"
 	"net/http"
 	"time"
+
+	"github.com/PuerkitoBio/goquery"
 )
 
 func main() {
-	fmt.Println(getResponse("https://lista.mercadolivre.com.br/veiculos/fusca"))
+	items := getMLItems("veiculos", "fusca")
+	print("\n\nPrice Crawler:\n\n")
+	for i, item := range items {
+		fmt.Printf("Item %d\n %+v\n", i+1, item)
+	}
+}
+
+func getMLItems(category, query string) []Item {
+	url := fmt.Sprintf("https://lista.mercadolivre.com.br/%s/%s", category, query)
+	// url := "https://www.mercadolivre.com.br/veiculos/#menu=categories"
+	res := getResponse(url)
+	items := []Item{}
+
+	doc, err := goquery.NewDocumentFromReader(res.Body)
+	// fmt.Println(doc.Html())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(doc.Html())
+	return items
 }
 
 type Item struct {
