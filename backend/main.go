@@ -25,12 +25,11 @@ func getMLItems(category, query string) []Item {
 	items := []Item{}
 
 	doc, err := goquery.NewDocumentFromReader(res.Body)
-	// fmt.Println(doc.Html())
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println(doc.Html())
+	fmt.Println(doc.Find(".ui-search-layout__item").Html())
 	return items
 }
 
