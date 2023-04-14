@@ -25,8 +25,8 @@ func main() {
 	router.HandleFunc("/", Post).Methods(http.MethodPost, http.MethodOptions)
 	router.Use(mux.CORSMethodMiddleware(router))
 
-	fmt.Println("listen at http://localhost:8000")
-	log.Fatal(http.ListenAndServe(":8000", router))
+	fmt.Println("listen at port 5000")
+	log.Fatal(http.ListenAndServe(":5000", router))
 
 }
 
