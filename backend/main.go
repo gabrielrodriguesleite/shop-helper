@@ -22,23 +22,31 @@ func main() {
 
 	router := mux.NewRouter()
 
-	router.HandleFunc("/", Get).Methods(http.MethodGet)
+	router.HandleFunc("/", Post).Methods(http.MethodPost, http.MethodOptions)
+	router.Use(mux.CORSMethodMiddleware(router))
 
 	fmt.Println("listen at http://localhost:8000")
 	log.Fatal(http.ListenAndServe(":8000", router))
 
 }
 
-func Get(w http.ResponseWriter, r *http.Request) {
+func Post(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
+	// handle options request from browser verify request for post
+	if r.Method == http.MethodOptions {
+		return
+	}
+
 	var q Query
 	json.NewDecoder(r.Body).Decode(&q)
 
-	// fmt.Printf("%+v", q)
 	beautyPrint(q)
 
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(
 		map[string][]crawler.Item{
-			"items": crawler.GetMLItems("veiculos", "fusca"),
+			"items": crawler.GetMLItems(q.Category, q.Search),
 		},
 	)
 }
