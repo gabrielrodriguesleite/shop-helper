@@ -1,6 +1,6 @@
 # Full Stack Developer Review Lexart
 
-<https://gabrielrodriguesleite.github.io/shop-helper/>
+Open to view the live app: [Shop Helper](https://gabrielrodriguesleite.github.io/shop-helper)
 
 ## Software Engineering
 
