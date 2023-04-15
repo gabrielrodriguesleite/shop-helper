@@ -1,5 +1,10 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "react-app",
+    "airbnb",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+  ],
   "rules": {
     "no-console": "off",
     "no-alert": "off",

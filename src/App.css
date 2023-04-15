@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid red;
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.category-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+img {
+  width: 200px;
+}
+
+.fake-anchor:hover {
+  background-color: gray;
+}
+
+a:hover {
+  border: 1px dashed blue
+}
