@@ -1,20 +1,10 @@
-# Full Stack Developer Review Lexart
+# Shop Helper
+
+An search engine that connects to the Mercado Livre and Buscapé (web scrap).
 
 Open to view the live app: [Shop Helper](https://gabrielrodriguesleite.github.io/shop-helper)
 
-## Software Engineering
-
-1. Create a product search engine that connects to the Mercado Livre and Buscapé (web scrap) page.
-   1. Through a drop-down menu we can choose the categories: Mobile, Refrigerator, TV.
-   2. Through a drop-down menu we can choose the site: Mercado Livre / Buscapé
-   3. Create a free text entry to search for products
-   4. After searching the list of products that will appear on the screen with: Photo, description, category, price and website where the information was obtained
-   5. Store results in database after user search. If you repeat the same search (only take into account the category and web filters to store), show what leaves the base and don't undo it for the webs.
-   6. Host the solution online on a free server like heroku or some other alternative.
-2. Create a repository on Github of the public type and load the project with at least 5 commits.
-   1. use two branches: develop and master
-   2. Where master only have the merge of develop commits
-3. Send the repository and the link of the solution to: join-us@lexartlabs.com with the subject: "Name of candidate - FullStack Test - Software"
+---
 
 # TODO
 
@@ -39,3 +29,32 @@ Open to view the live app: [Shop Helper](https://gabrielrodriguesleite.github.io
 
 - [ ] Verify for itens already searched
 - [ ] Create itens after search(scrap)
+
+# Used tecnologies
+
+## Frontend
+
+![Node Badge](https://img.shields.io/badge/-Node.js-233056?style=flat-square&logo=node.js&logoColor=026e0)
+![React Badge](https://img.shields.io/badge/-React-23272f?style=flat-square&logo=react&logoColor=149eca)
+
+## Backend
+
+![GO Badge](https://img.shields.io/badge/-GO-79d4fd?style=flat-square&logo=go&logoColor=white)
+![Docker Badge](https://img.shields.io/badge/-Docker-003f8c?style=flat-square&logo=docker&logoColor=white)
+
+## Default
+
+![Eslint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
+![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)
+
+## Project Layout
+
+![](/shop-helper.png)
+
+## Item (product object)
+
+![](/show-helper-item.png)
+
+## Backend
+
+![fluxograma-backend](/Fluxograma%20Backend.png)
