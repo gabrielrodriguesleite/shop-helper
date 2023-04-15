@@ -15,3 +15,20 @@
    1. use two branches: develop and master
    2. Where master only have the merge of develop commits
 3. Send the repository and the link of the solution to: join-us@lexartlabs.com with the subject: "Name of candidate - FullStack Test - Software"
+
+- [ ] Frontend
+  - [x] Category drop-down option
+  - [x] Website drop-down option
+  - [x] Text search
+  - [x] Frontend deploy
+  - [ ] Frontend Style
+  - [ ] Scrap through the pages
+  - [ ] Frontend Tests
+- [ ] Backend
+  - [x] Mercado Livre scrap
+  - [ ] Buscapé scrap
+  - [x] Backend deploy
+  - [ ] Backend tests
+- [ ] Database
+  - [ ] Verify for itens already searched
+  - [ ] Create itens after search(scrap)
