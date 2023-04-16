@@ -1,18 +1,74 @@
-* {
-  box-sizing: border-box;
+input {
+  background-color: #00000040;
+  flex-grow: 1;
+  max-width: 30%;
+  min-width: 10rem;
+}
+
+input, select, button{
   margin: 5px;
   padding: 5px;
-  border: 1px solid red;
-  background-color: #282c34;
-  color: white;
-  text-align: center;
   border-radius: 5px;
 }
 
-.category-section {
+section {
+  margin: 5px 0;
+  padding: 5px 0;
+}
+
+select {
+  background-color: #00000040;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.search-bar, .category-section {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.category-section {
+  background-color: #ffffff55;
+  border-radius: 0;
+  width: 100vw;
+  font-weight: 800;
+}
+
+button {
+  font-size: 14px;
+  background: #fff;
+  color: #1b1d21;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  padding: 14px 30px 14px 30px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333;
+  color: #fff;
+}
+
+button:focus {
+  color: #fff;              
+  background: #1b1d21;
 }
 
 .cards {
@@ -20,16 +76,4 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-img {
-  width: 200px;
-}
-
-.fake-anchor:hover {
-  background-color: gray;
-}
-
-a:hover {
-  border: 1px dashed blue
 }

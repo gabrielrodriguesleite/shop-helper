@@ -1,19 +1,26 @@
-import React from "react"
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import "./Card.css"
 
 function Card(props) {
-  const {website, photo, price, description} = props.item
+  const { website, photo, price, description } = props.item;
   return (
-    <a target="_blank" rel="noreferrer" href={website}>
-      <img src={photo}/>
-      <h1>R${price}</h1>
-      <div>{description}</div>
-      <div className="fake-anchor">Ver a oferta</div>
-    </a>
-  )
+    <div className="Card">
+      <a target="_blank" rel="noreferrer" href={website}>
+        <div className='card-image-box'>
+          <img src={photo} />
+        </div>
+        <div>
+          <p className='card-price'>R${price}</p>
+          <p>{description}</p>
+          <p className="fake-anchor">Ver a oferta</p>
+        </div>
+      </a>
+    </div>
+  );
 }
 
-export default Card
+export default Card;
 
 Card.propTypes = {
   item: PropTypes.shape({
@@ -23,4 +30,4 @@ Card.propTypes = {
     website: PropTypes.string,
     category: PropTypes.string,
   }).isRequired,
-}
+};

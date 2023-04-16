@@ -14,7 +14,7 @@ Open to view the live app: [Shop Helper](https://gabrielrodriguesleite.github.io
 - [x] Website drop-down option
 - [x] Text search
 - [x] Frontend deploy
-- [ ] Frontend Style
+- [x] Frontend Style
 - [ ] Scrap through the pages
 - [ ] Frontend Tests
 

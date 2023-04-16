@@ -26,7 +26,9 @@ function App() {
 
       {/* ========== SEARCH AREA ========== */}
       <section className="search-bar">
-        <span>Shop Helper</span>
+        <div  className='logo'>
+          <span>Shop Helper</span>
+        </div>
 
         <input
           type="search"
