@@ -53,7 +53,7 @@ func GetMLItems(category, query string) []Item {
 		}
 
 		// selecionando o preço
-		item.Price = selection.Find(".price-tag-symbol").Text() + selection.Find(".price-tag-fraction").Text()
+		item.Price = selection.Find(".price-tag-fraction").First().Text()
 
 		items = append(items, item)
 
