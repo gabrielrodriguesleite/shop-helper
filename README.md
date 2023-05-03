@@ -15,13 +15,13 @@ Open to view the live app: [Shop Helper](https://gabrielrodriguesleite.github.io
 - [x] Text search
 - [x] Frontend deploy
 - [x] Frontend Style
-- [ ] Scrap through the pages
 - [ ] Frontend Tests
 
 ## Backend
 
 - [x] Mercado Livre scrap
 - [ ] Buscapé scrap
+- [ ] Scrap through the pages
 - [x] Backend deploy
 - [ ] Backend tests
 
